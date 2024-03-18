@@ -21,22 +21,13 @@ button {
 	text-align: center;
 
 	@media (max-width: 700px) {
-		.playlist-song-duration > & {
+		.playlist-song__duration > & {
 			padding: 0;
 		}
 	}
 }
 
-.playlist-song {
-	outline-color: var(--highlight-color);
-}
-
-.playlist li:not(:last-child) {
-	border-bottom: 1px solid var(--background-color);
-}
-
-button:focus,
-.playlist-song:focus {
+button:focus {
 	outline-style: dashed;
 	outline-width: 2px;
 }

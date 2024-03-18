@@ -28,9 +28,20 @@
 	align-items: center;
 	padding: 5px;
 
+	outline-color: var(--highlight-color);
+
+	&:focus {
+		outline-style: dashed;
+		outline-width: 2px;
+	}
+
 	@media (max-width: 700px) {
 		justify-content: space-between;
 	}
+}
+
+.playlist .playlist-song:not(:last-child) {
+	border-bottom: 1px solid var(--background-color);
 }
 
 [aria-current='true'] {
@@ -41,7 +52,7 @@
 	color: var(--highlight-color);
 }
 
-.playlist-song-info {
+.playlist-song__info {
 	height: 100%;
 	display: flex;
 	flex-direction: row;
@@ -66,7 +77,7 @@
 	font-size: 1.125rem;
 }
 
-.playlist-song-title {
+.playlist-song__title {
 	font-size: 0.85rem;
 	width: 241px;
 	text-align: left;
@@ -76,7 +87,7 @@
 	}
 }
 
-.playlist-song-artist {
+.playlist-song__artist {
 	font-size: 0.725rem;
 	width: 80px;
 
@@ -85,25 +96,25 @@
 	}
 }
 
-.playlist-song-duration {
+.playlist-song__duration {
 	font-size: 0.725rem;
 	margin: auto;
 	font-family: var(--font-headline);
 	width: 30px;
 }
 
-.playlist-song-delete {
+.playlist-song__delete {
 	padding: 0;
 	width: 20px;
 	height: 20px;
 }
 
-.playlist-song-delete,
-.playlist-song-delete {
+.playlist-song__delete,
+.playlist-song__delete {
 	fill: var(--foreground-color);
 }
 
-.playlist-song-delete:hover circle,
-.playlist-song-delete:focus circle {
+.playlist-song__delete:hover circle,
+.playlist-song__delete:focus circle {
 	fill: #ff0000;
 }
