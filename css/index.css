@@ -12,7 +12,7 @@ ul {
 :root {
   /* colors */
   --primary-color: #ffffff;
-  --secondary-color: yellow;
+  --secondary-color: #9cbff3;
   --app-background-color: #0099ff;
   --background-color: #0000ff;
   --foreground-color: #1a50d8;
@@ -48,6 +48,12 @@ h2 {
   h2 {
     font-size: 0.75rem;
   }
+}
+
+div,
+section,
+ul {
+  border-radius: 5px;
 }
 
 .container {
@@ -282,7 +288,6 @@ button {
   color: var(--primary-color);
   cursor: pointer;
   font-size: var(--root-font-size);
-  outline-color: var(--highlight-color);
   text-align: center;
 }
 @media (max-width: 700px) {
@@ -291,9 +296,8 @@ button {
   }
 }
 
-button:focus {
-  outline-style: dashed;
-  outline-width: 2px;
+button:focus svg {
+  fill: var(--highlight-color);
 }
 
 #playlist-songs {
@@ -341,9 +345,8 @@ button:focus {
   padding: 5px;
   outline-color: var(--highlight-color);
 }
-.playlist-song:focus {
-  outline-style: dashed;
-  outline-width: 2px;
+.playlist-song button:focus, .playlist-song:focus {
+  color: var(--highlight-color);
 }
 @media (max-width: 700px) {
   .playlist-song {

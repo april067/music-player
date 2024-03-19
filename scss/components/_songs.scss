@@ -30,9 +30,9 @@
 
 	outline-color: var(--highlight-color);
 
+	button:focus,
 	&:focus {
-		outline-style: dashed;
-		outline-width: 2px;
+		color: var(--highlight-color);
 	}
 
 	@media (max-width: 700px) {

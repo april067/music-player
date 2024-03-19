@@ -17,7 +17,6 @@ button {
 	color: var(--primary-color);
 	cursor: pointer;
 	font-size: var(--root-font-size);
-	outline-color: var(--highlight-color);
 	text-align: center;
 
 	@media (max-width: 700px) {
@@ -27,7 +26,6 @@ button {
 	}
 }
 
-button:focus {
-	outline-style: dashed;
-	outline-width: 2px;
+button:focus svg {
+	fill: var(--highlight-color);
 }
