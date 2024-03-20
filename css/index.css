@@ -255,7 +255,7 @@ ul {
 .playlist__lines > div {
   height: 2px;
   width: 100%;
-  min-width: 75px;
+  min-width: 70px;
   background-color: var(--highlight-color);
 }
 
