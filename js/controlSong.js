@@ -1,9 +1,9 @@
 import userData from './userData.js';
-import setPlayerDisplay from './handleControl/setPlayerDisplay.js';
+import renderSongs from './renderSongs.js';
 import getCurrentSongIndex from './handleControl/getCurrentSongIndex.js';
 import highlightCurrentSong from './handleControl/highlightCurrentSong.js';
 import setPlayButtonAccessibleText from './handleControl/setPlayButtonAccessibleText.js';
-import renderSongs from './renderSongs.js';
+import setPlayerDisplay from './handleControl/setPlayerDisplay.js';
 
 const playButton = document.getElementById('play');
 const pauseButton = document.getElementById('pause');
@@ -89,6 +89,22 @@ pauseButton.addEventListener('click', pauseSong);
 nextButton.addEventListener('click', playNextSong);
 previousButton.addEventListener('click', playPreviousSong);
 shuffleButton.addEventListener('click', shuffle);
+audio.addEventListener('ended', () => {
+	const currentSongIndex = getCurrentSongIndex();
+	const nextSongExists = userData.songs.length - 1 > currentSongIndex ? true : false;
+
+	if (nextSongExists) {
+		playNextSong();
+	} else {
+		userData.currentSong = null;
+		userData.songCurrentTime = 0;
+
+		pauseSong();
+		highlightCurrentSong();
+		setPlayerDisplay();
+		setPlayButtonAccessibleText();
+	}
+});
 
 export { playSong, pauseSong, playNextSong, playPreviousSong };
 
