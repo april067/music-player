@@ -2,6 +2,8 @@ import userData from '../userData.js';
 import allSongs from '../db.js';
 import renderSongs from '../renderSongs.js';
 import sortSongs from '../sortSongs.js';
+import pauseSong from './pauseSong.js';
+import setPlayerDisplay from '../handleControl/setPlayerDisplay.js';
 import highlightCurrentSong from '../handleControl/highlightCurrentSong.js';
 import setPlayButtonAccessibleText from '../handleControl/setPlayButtonAccessibleText.js';
 

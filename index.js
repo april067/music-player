@@ -1,12 +1,7 @@
-import allSongs from './js/db.js';
-import userData from './js/userData.js';
-import { playSong, pauseSong, playNextSong, playPreviousSong } from './js/controlSong.js';
+import playSong from './js/commonControl/playSong.js';
+import deleteSong from './js/commonControl/deleteSong.js';
 import renderSongs from './js/renderSongs.js';
 import sortSongs from './js/sortSongs.js';
-import setPlayerDisplay from './js/handleControl/setPlayerDisplay.js';
-import deleteSong from './js/commonControl/deleteSong.js';
-
-renderSongs(sortSongs());
 
 /*
 Module creates a scope to avoid name collisions.
@@ -20,3 +15,5 @@ document.querySelector('.playlist-song__info').addEventListener('click', playSon
 */
 window._playSong = playSong;
 window._deleteSong = deleteSong;
+
+renderSongs(sortSongs());
